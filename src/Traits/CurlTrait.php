@@ -3,9 +3,9 @@
  * @author Franky So <frankyso.mail@gmail.com>
  */
 
-namespace frankyso\iPaymu\Traits;
+namespace Flabib\iPaymu\Traits;
 
-use frankyso\iPaymu\Exceptions\ApiKeyInvalid;
+use Flabib\iPaymu\Exceptions\ApiKeyInvalid;
 
 trait CurlTrait
 {

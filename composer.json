@@ -1,5 +1,5 @@
 {
-  "name": "frankyso/ipaymu",
+  "name": "Flabib/ipaymu",
   "description": "iPaymu-PHP API Package Library",
   "type": "library",
   "require-dev": {
@@ -9,12 +9,12 @@
   },
   "autoload": {
     "psr-4": {
-      "frankyso\\iPaymu\\": "src/"
+      "Flabib\\iPaymu\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "frankyso\\iPaymu\\Tests\\": "tests/"
+      "Flabib\\iPaymu\\Tests\\": "tests/"
     }
   },
   "license": "GPL-3.0",

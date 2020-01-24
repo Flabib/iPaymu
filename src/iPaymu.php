@@ -3,11 +3,11 @@
  * @author Franky So <frankyso.mail@gmail.com>
  */
 
-namespace frankyso\iPaymu;
+namespace Flabib\iPaymu;
 
-use frankyso\iPaymu\Exceptions\ApiKeyInvalid;
-use frankyso\iPaymu\Exceptions\ApiKeyNotFound;
-use frankyso\iPaymu\Traits\CurlTrait;
+use Flabib\iPaymu\Exceptions\ApiKeyInvalid;
+use Flabib\iPaymu\Exceptions\ApiKeyNotFound;
+use Flabib\iPaymu\Traits\CurlTrait;
 
 class iPaymu
 {
@@ -41,15 +41,23 @@ class iPaymu
     protected $ucancel;
 
     /**
+     * @var , Store API Url
+     */
+    protected $resource;
+
+    /**
      * iPaymu constructor.
      *
      * @param null  $apiKey
      * @param array $url
+     * @param bool $production
      *
      * @throws ApiKeyNotFound
      */
-    public function __construct($apiKey = null, $url = ['', '', ''])
+    public function __construct($apiKey = null, $production = false, $url = ['', '', ''])
     {
+        $this->$resource = new Resource($production);
+
         $this->setApiKey($apiKey);
         $this->cart = new Cart($this);
         $this->setUcancel($url[0]);
@@ -153,7 +161,7 @@ class iPaymu
      */
     public function checkBalance()
     {
-        $response = $this->request(Resource::$BALANCE, [
+        $response = $this->request($this->response->getBalance(), [
             'key'    => $this->apiKey,
             'format' => 'json',
         ]);
@@ -173,14 +181,14 @@ class iPaymu
 
     /**
      * Check Transactions.
-     *
-     * @deprecated
      */
     public function checkTransaction($id)
     {
-        return $this->request(Resource::$TRANSACTION, [
+        $response =  $this->request($this->response->getTransaction(), [
             'key' => $this->apiKey,
             'id'  => $id,
         ]);
+
+        return $response;
     }
 }

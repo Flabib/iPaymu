@@ -3,7 +3,7 @@
  * @author Franky So <frankyso.mail@gmail.com>
  */
 
-namespace frankyso\iPaymu;
+namespace Flabib\iPaymu;
 
 class Cart
 {
@@ -52,7 +52,9 @@ class Cart
      */
     public function checkout($comments = '')
     {
-        return $this->iPaymu->request(Resource::$PAYMENT, $this->buildParams($comments));
+        $response = $this->iPaymu->request($this->iPaymu->resource->getPayment, $this->buildParams($comments));
+
+        return $response;
     }
 
     /**
