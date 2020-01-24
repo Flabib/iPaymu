@@ -3,11 +3,11 @@
  * @author Franky So <frankyso.mail@gmail.com>
  */
 
-namespace Flabib\iPaymu;
+namespace flabib\iPaymu;
 
-use Flabib\iPaymu\Exceptions\ApiKeyInvalid;
-use Flabib\iPaymu\Exceptions\ApiKeyNotFound;
-use Flabib\iPaymu\Traits\CurlTrait;
+use flabib\iPaymu\Exceptions\ApiKeyInvalid;
+use flabib\iPaymu\Exceptions\ApiKeyNotFound;
+use flabib\iPaymu\Traits\CurlTrait;
 
 class iPaymu
 {

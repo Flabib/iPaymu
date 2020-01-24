@@ -3,7 +3,7 @@
  * @author Franky So <frankyso.mail@gmail.com>
  */
 
-namespace Flabib\iPaymu\Traits;
+namespace flabib\iPaymu\Traits;
 
 use Flabib\iPaymu\Exceptions\ApiKeyInvalid;
 

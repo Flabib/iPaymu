@@ -9,12 +9,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Flabib\\iPaymu\\": "src/"
+      "flabib\\iPaymu\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Flabib\\iPaymu\\Tests\\": "tests/"
+      "flabib\\iPaymu\\Tests\\": "tests/"
     }
   },
   "license": "GPL-3.0",

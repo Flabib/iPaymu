@@ -3,7 +3,7 @@
  * @author Franky So <frankyso.mail@gmail.com>
  */
 
-namespace Flabib\iPaymu;
+namespace flabib\iPaymu;
 
 class Cart
 {
