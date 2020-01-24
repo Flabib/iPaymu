@@ -3,11 +3,11 @@
  * @author Franky So <frankyso.mail@gmail.com>
  */
 
-namespace flabib\iPaymu;
+namespace Flabib\iPaymu;
 
 class Resource
 {
-    protected $balance, $transaction, $payment;
+    public $balance, $transaction, $payment;
 
     /**
      * Resource constructor.
@@ -21,23 +21,11 @@ class Resource
             $base = 'http://sandbox.ipaymu.com/';
         }
 
-        $this->balance = $base + 'api/saldo';
-        $this->transaction = $base + 'api/transaksi';
-        $this->payment = $base + 'payment';
+        $this->balance = $base . 'api/saldo';
+        $this->transaction = $base . 'api/transaksi';
+        $this->payment = $base . 'payment';
 
         return $this;
-    }
-
-    public function getBalance() {
-        return $this->balance;
-    }
-
-    public function getTransaction() {
-        return $this->transaction;
-    }
-
-    public function getPayment() {
-        return $this->payment;
     }
 
     // will be developed next release

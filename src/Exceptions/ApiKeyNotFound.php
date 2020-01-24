@@ -3,7 +3,7 @@
  * @author Franky So <frankyso.mail@gmail.com>
  */
 
-namespace flabib\iPaymu\Exceptions;
+namespace Flabib\iPaymu\Exceptions;
 
 use Exception;
 

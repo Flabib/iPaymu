@@ -3,11 +3,11 @@
  * @author Franky So <frankyso.mail@gmail.com>
  */
 
-namespace flabib\iPaymu;
+namespace Flabib\iPaymu;
 
-use flabib\iPaymu\Exceptions\ApiKeyInvalid;
-use flabib\iPaymu\Exceptions\ApiKeyNotFound;
-use flabib\iPaymu\Traits\CurlTrait;
+use Flabib\iPaymu\Exceptions\ApiKeyInvalid;
+use Flabib\iPaymu\Exceptions\ApiKeyNotFound;
+use Flabib\iPaymu\Traits\CurlTrait;
 
 class iPaymu
 {
@@ -56,7 +56,7 @@ class iPaymu
      */
     public function __construct($apiKey = null, $production = false, $url = ['', '', ''])
     {
-        $this->$resource = new Resource($production);
+        $this->resource = new Resource($production);
 
         $this->setApiKey($apiKey);
         $this->cart = new Cart($this);
@@ -161,7 +161,7 @@ class iPaymu
      */
     public function checkBalance()
     {
-        $response = $this->request($this->response->getBalance(), [
+        $response = $this->request($this->resource->balance, [
             'key'    => $this->apiKey,
             'format' => 'json',
         ]);
@@ -184,9 +184,10 @@ class iPaymu
      */
     public function checkTransaction($id)
     {
-        $response =  $this->request($this->response->getTransaction(), [
+        $response =  $this->request($this->resource->transaction, [
             'key' => $this->apiKey,
             'id'  => $id,
+            'format' => 'json',
         ]);
 
         return $response;
