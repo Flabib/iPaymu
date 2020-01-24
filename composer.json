@@ -1,5 +1,5 @@
 {
-  "name": "Flabib/ipaymu",
+  "name": "flabib/ipaymu",
   "description": "iPaymu-PHP API Package Library",
   "type": "library",
   "require-dev": {
