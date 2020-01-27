@@ -23,15 +23,12 @@ composer require flabib/ipaymu
 <?php
 use Flabib\iPaymu\iPaymu;
 
-$iPaymu = new iPaymu('your-api-key');
+$production = true; // Set to false for sandbox
+$iPaymu = new iPaymu('your-api-key', $production);
 ```
 
 ### Set URL
 ```php
-<?php
-use Flabib\iPaymu\iPaymu;
-
-$iPaymu = new iPaymu('your-api-key');
 $iPaymu->setURL([
     'ureturn' => 'https://your-website',
     'unotify' => 'https://your-website',
@@ -42,9 +39,6 @@ $iPaymu->setURL([
 ### Set Buyer
 ```php
 <?php
-use Flabib\iPaymu\iPaymu;
-
-$iPaymu = new iPaymu('your-api-key');
 $iPaymu->setBuyer([
     'name' => 'your-name',
     'phone' => 'your-phone',
@@ -54,28 +48,16 @@ $iPaymu->setBuyer([
 
 ### Check API Key Validity
 ```php
-<?php
-use Flabib\iPaymu\iPaymu;
-
-$iPaymu = new iPaymu('your-api-key');
 $iPaymu->isApiKeyValid();
 ```
 
 ### Check Balance
 ```php
-<?php
-use Flabib\iPaymu\iPaymu;
-
-$iPaymu = new iPaymu('your-api-key');
 $iPaymu->checkBalance();
 ```
 
 ### Add Product to Cart
 ```php
-<?php
-use Flabib\iPaymu\iPaymu;
-
-$iPaymu = new iPaymu('your-api-key');
 $cart = $iPaymu->addCart([
     'name' => 'product-name',
     'quantity' => 'product-quantity',
@@ -86,37 +68,21 @@ $cart = $iPaymu->addCart([
 ### Pay Cstore
 Please add product to cart first before using this method
 ```php
-<?php
-use Flabib\iPaymu\iPaymu;
-
-$iPaymu = new iPaymu('your-api-key');
 $cart = $iPaymu->payCstore('indomaret/alfamart');
 ```
 
 ### Pay VA
 ```php
-<?php
-use Flabib\iPaymu\iPaymu;
-
-$iPaymu = new iPaymu('your-api-key');
 $cart = $iPaymu->payVA('cn/bni/bag/mandiri');
 ```
 
 ### Pay Bank
 ```php
-<?php
-use Flabib\iPaymu\iPaymu;
-
-$iPaymu = new iPaymu('your-api-key');
 $cart = $iPaymu->payBank();
 ```
 
 ### Check Transaction Status
 ```php
-<?php
-use Flabib\iPaymu\iPaymu;
-
-$iPaymu = new iPaymu('your-api-key');
 $iPaymu->checkTransaction("transaction-id");
 ```
 
