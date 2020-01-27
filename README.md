@@ -25,6 +25,7 @@ use Flabib\iPaymu\iPaymu;
 
 $iPaymu = new iPaymu('your-api-key');
 ```
+
 ### Set URL
 ```php
 <?php
@@ -38,13 +39,17 @@ $iPaymu->setURL([
 ]);
 ```
 
-### Check Balance
+### Set Buyer
 ```php
 <?php
 use Flabib\iPaymu\iPaymu;
 
 $iPaymu = new iPaymu('your-api-key');
-$iPaymu->checkBalance();
+$iPaymu->setBuyer([
+    'name' => 'your-name',
+    'phone' => 'your-phone',
+    'email' => 'your-email',
+]);
 ```
 
 ### Check API Key Validity
@@ -54,6 +59,15 @@ use Flabib\iPaymu\iPaymu;
 
 $iPaymu = new iPaymu('your-api-key');
 $iPaymu->isApiKeyValid();
+```
+
+### Check Balance
+```php
+<?php
+use Flabib\iPaymu\iPaymu;
+
+$iPaymu = new iPaymu('your-api-key');
+$iPaymu->checkBalance();
 ```
 
 ### Add Product to Cart
