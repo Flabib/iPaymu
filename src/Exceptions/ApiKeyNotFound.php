@@ -1,6 +1,6 @@
 <?php
 /**
- * @author Franky So <frankyso.mail@gmail.com>
+ * @author Fahdi Labib <fahdilabib@gmail.com>
  */
 
 namespace Flabib\iPaymu\Exceptions;
